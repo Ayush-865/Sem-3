@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #square {
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s, width 0.3s, height 0.3s;
+    }
+  </style>
+  <title>Interactive Square</title>
+</head>
+<body>
+
+  <div id="square"
+       onmouseover="changeContinuousColors()"
+       onmouseout="stopContinuousColors()"
+       onclick="toggleShape()"
+       onmouseenter="expand()"
+       onmouseleave="shrink()">
+       Hover over me
+  </div>
+
+  <script>
+    var isCircle = false;
+    var continuousColorChangeInterval;
+
+    function changeColor(color) {
+      var square = document.getElementById('square');
+      square.style.backgroundColor = color;
+    }
+
+    function changeContinuousColors() {
+      continuousColorChangeInterval = setInterval(function() {
+        var randomColor = getRandomColor();
+        changeColor(randomColor);
+      }, 300);
+    }
+
+    function stopContinuousColors() {
+      clearInterval(continuousColorChangeInterval);
+    }
+
+    function toggleShape() {
+      var square = document.getElementById('square');
+      isCircle = !isCircle;
+
+      if (isCircle) {
+        square.style.borderRadius = '50%';
+      } else {
+        square.style.borderRadius = '0';
+      }
+    }
+
+    function expand() {
+      var square = document.getElementById('square');
+      square.style.width = '200px';
+      square.style.height = '200px';
+    }
+
+    function shrink() {
+      var square = document.getElementById('square');
+      square.style.width = '150px';
+      square.style.height = '150px';
+    }
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+
+</body>
+</html>

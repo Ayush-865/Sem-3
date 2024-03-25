@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Styled Form with Tailwind CSS</title>
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="max-w-md w-full bg-white p-6 rounded-md shadow-md">
+        <form id="myForm" class="space-y-4">
+            <h2 class="text-2xl font-semibold mb-4">User Registration</h2>
+            <!-- Basic Information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-600">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input mt-1">
+                </div>
+
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-600">Username:</label>
+                    <input type="text" id="username" name="username" class="form-input mt-1">
+                </div>
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-600">Email:</label>
+                <input type="email" id="email" name="email" class="form-input mt-1">
+            </div>
+
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-600">Phone No:</label>
+                <input type="tel" id="phone" name="phone" class="form-input mt-1">
+            </div>
+
+            <div>
+                <label for="dob" class="block text-sm font-medium text-gray-600">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" class="form-input mt-1">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-600">Password:</label>
+                <input type="password" id="password" name="password" class="form-input mt-1">
+            </div>
+
+            <div>
+                <label for="confirmPassword" class="block text-sm font-medium text-gray-600">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input mt-1">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-600">Gender:</label>
+                <div class="mt-1">
+                    <input type="radio" id="male" name="gender" value="male" class="form-radio">
+                    <label for="male" class="ml-2">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" class="form-radio ml-4">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="showNextSection()" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">Next</button>
+
+            <div id="additionalInfo" class="hidden mt-4">
+                <div>
+                    <label for="city" class="block text-sm font-medium text-gray-600">City:</label>
+                    <select id="city" name="city" class="form-select mt-1">
+                        <option value="" disabled selected>Select City</option>
+                        <option value="city1">City 1</option>
+                        <option value="city2">City 2</option>
+                        <option value="city3">City 3</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="nationality" class="block text-sm font-medium text-gray-600">Nationality:</label>
+                    <select id="nationality" name="nationality" class="form-select mt-1">
+                        <option value="" disabled selected>Select Nationality</option>
+                        <option value="nationality1">Nationality 1</option>
+                        <option value="nationality2">Nationality 2</option>
+                        <option value="nationality3">Nationality 3</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-600">Address:</label>
+                    <textarea id="address" name="address" class="form-textarea mt-1"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="fatherName" class="block text-sm font-medium text-gray-600">Father's Name:</label>
+                        <input type="text" id="fatherName" name="fatherName" class="form-input mt-1">
+                    </div>
+
+                    <div>
+                        <label for="motherName" class="block text-sm font-medium text-gray-600">Mother's Name:</label>
+                        <input type="text" id="motherName" name="motherName" class="form-input mt-1">
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-4">
+                    <button type="button" onclick="showPreviousSection()" class="bg-gray-400 text-white px-4 py-2 rounded-md">Back</button>
+                    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Submit</button>
+                </div>
+            </div>
+        </form>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
