@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="Contact" class="container mx-auto py-10">
+        <form id="contactForm" class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <h2 class="text-2xl font-semibold mb-6">Contact Us</h2>
+            <div class="mb-4">
+                <input type="text" id="username" name="username" autocomplete="off" placeholder="Enter Name" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <input type="email" id="email" name="email" autocomplete="off" placeholder="Enter Email" required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="phone" name="phone" autocomplete="off" placeholder="Enter Phone No." required
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-6">
+                <textarea name="message" id="message" rows="4" placeholder="Your Message"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <div class="flex items-center justify-center">
+                <button type="submit"
+                    class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+    <div id="formData" class="container mx-auto">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

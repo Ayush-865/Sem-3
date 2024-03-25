@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation Example</title>
+  </head>
+  <body>
+    <form id="myForm" onsubmit="validateForm()">
+      <!-- Form fields go here -->
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      function validateForm() {
+        // Get form elements
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validate username
+        if (username === "") {
+          alert("Username cannot be empty");
+          return false;
+        }
+
+        // Validate password
+        if (password === "") {
+          alert("Password cannot be empty");
+          return false;
+        }
+
+        // Additional validation logic can go here
+
+        return true; // Submit the form if all validations pass
+      }
+    </script>
+  </body>
+</html>

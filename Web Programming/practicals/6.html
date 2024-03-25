@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div id="box" onmouseenter="change()"></div>
+</body>
+<script>
+    const box=document.getElementById("box");
+    const change=()=>{
+        box.style.backgroundColor="green";
+    }
+</script>
+</html>
